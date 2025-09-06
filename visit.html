@@ -2,44 +2,127 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Plan Your Visit - The Sons of God Ministry, Inc.</title>
+    <title>Plan Your Visit | The Sons of God Ministry</title>
+    <meta name="description" content="Plan your visit to The Sons of God Ministry. Get answers to FAQs, know what to expect, and let us know you're coming!">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="css/styles.css">
-    <link rel="stylesheet" href="css/visit.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
 <header>
     <div class="container">
         <div class="logo">
-            <a href="index.html"><img src="images/logo/logo.png" alt="The Sons of God Ministry" class="logo-img"> <span class="logo-text">The Sons of God Ministry</span></a>
+            <a href="index.html">
+                <img src="images/logo/logo.png" alt="The Sons of God Ministry" class="logo-img">
+                <span class="logo-text">The Sons of God Ministry</span>
+            </a>
         </div>
         <nav>
             <ul class="main-nav">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="index.html#about">About</a></li>
                 <li><a href="index.html#services">Services</a></li>
-                <li><a href="index.html#media-preview">Media</a></li>
-                <li><a href="index.html#small-groups">Groups</a></li>
-                <li><a href="visit.html" class="active">Visit Us</a></li>
+                <li><a href="sermons.html">Sermons</a></li>
+                <li><a href="praise_dance.html">Praise Dance</a></li>
+                <li><a href="podcasts.html">Podcasts</a></li>
                 <li><a href="giving.html" class="btn-primary">Give</a></li>
+                <li><a href="visit.html" class="active">Plan Your Visit</a></li>
             </ul>
-            <div class="menu-toggle">
+            <div class="menu-toggle" aria-label="Toggle navigation" role="button" tabindex="0">
                 <i class="fas fa-bars"></i>
             </div>
         </nav>
     </div>
 </header>
 
-<section class="visit-hero">
+<main style="margin-top:140px;padding-top:2rem;padding-bottom:2rem;">
     <div class="container">
-        <h1>Plan Your Visit</h1>
-        <p>We'd love to welcome you this week!</p>
-    </div>
-</section>
+        <h1 style="text-align:center;">Plan Your Visit</h1>
+        <p class="section-intro" style="text-align:center;">We're excited to welcome you! Here’s everything you need to know before you arrive.</p>
 
-<!-- Existing visit page body content -->
+        <!-- What to Expect -->
+        <section style="margin-bottom:2rem;">
+            <h2>What to Expect</h2>
+            <ul style="font-size:1.1rem;">
+                <li>Warm and friendly greeting at the door.</li>
+                <li>Free parking available on site.</li>
+                <li>Casual and comfortable atmosphere—come as you are.</li>
+                <li>Uplifting worship music and inspiring message.</li>
+                <li>Kids' ministry and safe, engaging programs for children.</li>
+                <li>Service lasts about 90 minutes.</li>
+                <li>Coffee and snacks available before and after service.</li>
+                <li>Opportunities to connect and ask questions afterwards.</li>
+            </ul>
+        </section>
+
+        <!-- FAQ Section -->
+        <section style="margin-bottom:2rem;">
+            <h2>Frequently Asked Questions</h2>
+            <div class="faq-list">
+                <div class="faq-item">
+                    <strong>What time should I arrive?</strong>
+                    <p>We recommend arriving 10-15 minutes early to find parking, check in your kids, and get settled.</p>
+                </div>
+                <div class="faq-item">
+                    <strong>Is there a dress code?</strong>
+                    <p>Nope! Dress comfortably. Most people wear casual clothes.</p>
+                </div>
+                <div class="faq-item">
+                    <strong>Is childcare provided?</strong>
+                    <p>Yes! We offer safe, fun programs for kids of all ages during all services.</p>
+                </div>
+                <div class="faq-item">
+                    <strong>Do I need to bring anything?</strong>
+                    <p>Just yourself! We provide everything you’ll need during service.</p>
+                </div>
+                <div class="faq-item">
+                    <strong>Do I have to participate?</strong>
+                    <p>No pressure—you’re welcome to simply observe and participate as you feel comfortable.</p>
+                </div>
+                <div class="faq-item">
+                    <strong>How long is the service?</strong>
+                    <p>Services typically last about 90 minutes.</p>
+                </div>
+                <div class="faq-item">
+                    <strong>Can I attend if I’m not religious?</strong>
+                    <p>Absolutely—you’re welcome no matter your background or beliefs.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Live Email Submission Form -->
+        <section style="margin-bottom:2rem;">
+            <h2>Let Us Know You're Coming!</h2>
+            <p>Fill out the form below so we can prepare a special welcome for you. Your info will be sent privately to our team.</p>
+            <form action="https://formspree.io/f/xgvlwgvl" method="POST">
+                <label for="name"><strong>Your Name:</strong></label><br>
+                <input type="text" id="name" name="name" required><br><br>
+
+                <label for="visit_date"><strong>When do you plan on visiting?</strong></label><br>
+                <input type="date" id="visit_date" name="visit_date" required><br><br>
+
+                <label for="expectation"><strong>What are you expecting from the service?</strong></label><br>
+                <textarea id="expectation" name="expectation" rows="3" required></textarea><br><br>
+
+                <label for="bringing_kids"><strong>Are you bringing kids?</strong></label><br>
+                <select id="bringing_kids" name="bringing_kids" required>
+                    <option value="">--Please choose an option--</option>
+                    <option value="No">No</option>
+                    <option value="Yes">Yes</option>
+                </select><br><br>
+
+                <label for="kids_ages"><strong>If yes, what are their ages?</strong></label><br>
+                <input type="text" id="kids_ages" name="kids_ages" placeholder="e.g., 3, 7, 11"><br><br>
+
+                <input type="hidden" name="_subject" value="Plan Your Visit Submission">
+                <input type="hidden" name="_replyto" value="rwgpastor@gmail.com">
+                <button type="submit" class="btn-primary">Submit</button>
+            </form>
+            <p style="font-size:.9rem;color:#444;margin-top:.5rem;">We respect your privacy—your info will only be used to help us welcome you!</p>
+        </section>
+    </div>
+</main>
 
 <footer>
     <div class="container">
@@ -47,6 +130,8 @@
             <div class="footer-section">
                 <h3>The Sons of God Ministry, Inc.</h3>
                 <p>200 Tabor St.<br>Pittsburgh, PA 15204</p>
+                <p>Phone: (555) 123-4567</p>
+                <p>Email: info@sonsofgodministry.org</p>
             </div>
             <div class="footer-section">
                 <h3>Service Times</h3>
@@ -58,10 +143,10 @@
                 <ul>
                     <li><a href="index.html#about">About</a></li>
                     <li><a href="index.html#services">Services</a></li>
-                    <li><a href="index.html#media-preview">Media</a></li>
-                    <li><a href="index.html#small-groups">Groups</a></li>
-                    <li><a href="visit.html">Visit Us</a></li>
-                    <li><a href="giving.html">Give</a></li>
+                    <li><a href="sermons.html">Sermons</a></li>
+                    <li><a href="praise_dance.html">Praise Dance</a></li>
+                    <li><a href="podcasts.html">Podcasts</a></li>
+                    <li><a href="visit.html">Plan Your Visit</a></li>
                 </ul>
             </div>
             <div class="footer-section">
@@ -69,12 +154,14 @@
                 <div class="social-icons">
                     <a href="#"><i class="fab fa-facebook-f"></i></a>
                     <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                    <a href="#"><i class="fab fa-spotify"></i></a>
                 </div>
             </div>
             <div class="footer-section">
-                <h3>Stay Updated</h3>
+                <h3>Newsletter</h3>
                 <form action="https://formspree.io/f/xdklnnbg" method="POST">
-                    <input type="email" name="email" placeholder="Your Email Address" required>
+                    <input type="email" name="email" placeholder="Your Email" required>
                     <button type="submit">Subscribe</button>
                 </form>
             </div>
@@ -84,6 +171,12 @@
         </div>
     </div>
 </footer>
-<script src="js/script.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded',()=>{
+  const toggle=document.querySelector('.menu-toggle');
+  const nav=document.querySelector('.main-nav');
+  if(toggle){toggle.addEventListener('click',()=>nav.classList.toggle('active'));}
+});
+</script>
 </body>
 </html>
