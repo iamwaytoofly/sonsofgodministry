@@ -10,36 +10,16 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Inter:wght@300;400;600&display=swap"
           rel="stylesheet">
     <style>
-        .sermons-hero {
-            background: linear-gradient(rgba(0,0,0,.55), rgba(0,0,0,.55)),
-                        url("images/sermons-hero.jpg") center/cover no-repeat;
-            color:#fff;
-            padding:100px 0 80px;
-            text-align:center;
+        .media-hero {
+            background: linear-gradient(rgba(0,0,0,.55), rgba(0,0,0,.55)), url("images/sermons-hero.jpg") center/cover no-repeat;
+            color: #fff;
+            padding: 90px 0 50px;
+            text-align: center;
         }
-        .sermons-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin: 2.5rem 0;
-        }
-        .sermon-card:hover { transform:translateY(-4px); box-shadow:0 8px 22px rgba(0,0,0,.12); }
-        .sermon-image img { width:100%;height:160px;object-fit:cover;display:block; }
-        .sermon-content { padding:1rem 1.1rem 1.25rem; display:flex; flex-direction:column; gap:.5rem; }
-        .sermon-meta { font-size:.8rem; text-transform:uppercase; letter-spacing:.05em; color:#6366f1; font-weight:600; }
-        .sermon-date { font-size:.85rem; color:#444; }
-        .tag-row { display:flex; flex-wrap:wrap; gap:.4rem; margin-top:.35rem; }
-        .tag-row span {
-            font-size:.65rem; background:#eef2ff; color:#4338ca; padding:.35rem .55rem;
-            border-radius:999px; font-weight:600; letter-spacing:.05em;
-        }
-        .placeholder { opacity:.75; }
+        .media-content { max-width: 900px; margin: 0 auto; padding: 2rem 1rem; }
         .cta-bar { text-align:center; margin:3rem 0 1rem; }
         .btn-secondary { background: #eef2ff; color: #4338ca; border-radius: 999px; padding: .7rem 1.5rem; font-weight: 600; text-decoration: none; display: inline-block; transition: background .2s; }
         .btn-secondary:hover { background: #6366f1; color: #fff; }
-        @media (max-width:640px){
-            .sermons-grid { grid-template-columns: 1fr; }
-        }
     </style>
 </head>
 <body>
@@ -66,85 +46,22 @@
     </div>
 </header>
 
-<section class="sermons-hero">
-    <div class="container">
-        <h1>Sermons</h1>
-        <p>Listen to inspiring messages and teachings from our ministry.</p>
-    </div>
+<section class="media-hero">
+    <h1>Sermons</h1>
+    <p>Listen to inspiring messages and teachings from our ministry.</p>
 </section>
-
-<section class="sermons-directory">
-    <div class="container">
-        <div class="sermons-grid" id="sermonsGrid">
-            <div class="sermon-card">
-                <div class="sermon-image">
-                    <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=800&q=80" alt="Walking in Purpose">
-                </div>
-                <div class="sermon-content">
-                    <span class="sermon-meta">Pastor John Doe</span>
-                    <h3>Walking in Purpose</h3>
-                    <p class="sermon-date"><i class="far fa-calendar-alt"></i> September 7, 2025</p>
-                    <div class="tag-row">
-                        <span>Purpose</span><span>Faith</span>
-                    </div>
-                    <a href="#" class="btn-primary">Listen</a>
-                </div>
-            </div>
-            <div class="sermon-card">
-                <div class="sermon-image">
-                    <img src="https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=800&q=80" alt="Faith Over Fear">
-                </div>
-                <div class="sermon-content">
-                    <span class="sermon-meta">Pastor Jane Smith</span>
-                    <h3>Faith Over Fear</h3>
-                    <p class="sermon-date"><i class="far fa-calendar-alt"></i> August 31, 2025</p>
-                    <div class="tag-row">
-                        <span>Faith</span><span>Courage</span>
-                    </div>
-                    <a href="#" class="btn-primary">Listen</a>
-                </div>
-            </div>
-            <div class="sermon-card">
-                <div class="sermon-image">
-                    <img src="https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?auto=format&fit=crop&w=800&q=80" alt="The Power of Prayer">
-                </div>
-                <div class="sermon-content">
-                    <span class="sermon-meta">Pastor Mike Lee</span>
-                    <h3>The Power of Prayer</h3>
-                    <p class="sermon-date"><i class="far fa-calendar-alt"></i> August 24, 2025</p>
-                    <div class="tag-row">
-                        <span>Prayer</span><span>Spiritual Growth</span>
-                    </div>
-                    <a href="#" class="btn-primary">Listen</a>
-                </div>
-            </div>
-            <!-- Placeholder cards for upcoming sermons -->
-            <div class="sermon-card placeholder">
-                <div class="sermon-image">
-                    <img src="https://images.unsplash.com/photo-1441239372925-ac0b51c4c0b5?auto=format&fit=crop&w=800&q=80" alt="Sermon Placeholder">
-                </div>
-                <div class="sermon-content">
-                    <span class="sermon-meta">Coming Soon</span>
-                    <h3>Coming Soon</h3>
-                    <p class="sermon-date"><i class="far fa-calendar-alt"></i> TBA</p>
-                    <div class="tag-row"><span>Topic</span><span>Speaker</span></div>
-                </div>
-            </div>
-            <div class="sermon-card placeholder">
-                <div class="sermon-image">
-                    <img src="https://images.unsplash.com/photo-1465101178521-c1aee1b7a9a0?auto=format&fit=crop&w=800&q=80" alt="Sermon Placeholder">
-                </div>
-                <div class="sermon-content">
-                    <span class="sermon-meta">Coming Soon</span>
-                    <h3>Coming Soon</h3>
-                    <p class="sermon-date"><i class="far fa-calendar-alt"></i> TBA</p>
-                    <div class="tag-row"><span>Topic</span><span>Speaker</span></div>
-                </div>
-            </div>
-        </div>
-        <div class="cta-bar">
-            <a href="index.html" class="btn-secondary"><i class="fas fa-arrow-left"></i> Back to Home</a>
-        </div>
+<section>
+    <div class="media-content">
+        <h2>Recent Sermons</h2>
+        <ul>
+            <li>September 7, 2025: <a href="#">"Walking in Purpose"</a></li>
+            <li>August 31, 2025: <a href="#">"Faith Over Fear"</a></li>
+            <li>August 24, 2025: <a href="#">"The Power of Prayer"</a></li>
+        </ul>
+        <!-- Add more as needed -->
+    </div>
+    <div class="cta-bar">
+        <a href="index.html#media-preview" class="btn-secondary"><i class="fas fa-arrow-left"></i> Back to Home</a>
     </div>
 </section>
 
