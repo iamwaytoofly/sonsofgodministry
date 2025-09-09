@@ -3,23 +3,45 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sermons - The Sons of God Ministry, Inc.</title>
+    <title>Small Groups - The Sons of God Ministry, Inc.</title>
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet"
           href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Inter:wght@300;400;600&display=swap"
           rel="stylesheet">
     <style>
-        .media-hero {
-            background: linear-gradient(rgba(0,0,0,.55), rgba(0,0,0,.55)), url("images/sermons-hero.jpg") center/cover no-repeat;
-            color: #fff;
-            padding: 90px 0 50px;
-            text-align: center;
+        .groups-hero {
+            background: linear-gradient(rgba(0,0,0,.55), rgba(0,0,0,.55)),
+                        url("https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?auto=format&fit=crop&w=1350&q=80")
+                        center/cover no-repeat;
+            color:#fff;
+            padding:100px 0 80px;
+            text-align:center;
         }
-        .media-content { max-width: 900px; margin: 0 auto; padding: 2rem 1rem; }
+        .groups-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 2.5rem 0;
+        }
+        .group-card:hover { transform:translateY(-4px); box-shadow:0 8px 22px rgba(0,0,0,.12); }
+        .group-image img { width:100%;height:160px;object-fit:cover;display:block; }
+        .group-content { padding:1rem 1.1rem 1.25rem; display:flex; flex-direction:column; gap:.5rem; }
+        .group-meta { font-size:.8rem; text-transform:uppercase; letter-spacing:.05em; color:#6366f1; font-weight:600; }
+        .group-times { font-size:.85rem; color:#444; }
+        .tag-row { display:flex; flex-wrap:wrap; gap:.4rem; margin-top:.35rem; }
+        .tag-row span {
+            font-size:.65rem; background:#eef2ff; color:#4338ca; padding:.35rem .55rem;
+            border-radius:999px; font-weight:600; letter-spacing:.05em;
+        }
+        .placeholder { opacity:.75; }
+        .info-note { background:#f1f5f9; padding:1rem 1.25rem; border-left:4px solid #6366f1; border-radius:8px; font-size:.85rem; margin:2.5rem 0; }
         .cta-bar { text-align:center; margin:3rem 0 1rem; }
         .btn-secondary { background: #eef2ff; color: #4338ca; border-radius: 999px; padding: .7rem 1.5rem; font-weight: 600; text-decoration: none; display: inline-block; transition: background .2s; }
         .btn-secondary:hover { background: #6366f1; color: #fff; }
+        @media (max-width:640px){
+            .groups-grid { grid-template-columns: 1fr; }
+        }
     </style>
 </head>
 <body>
@@ -34,8 +56,8 @@
                 <li><a href="index.html">Home</a></li>
                 <li><a href="index.html#about">About</a></li>
                 <li><a href="index.html#services">Services</a></li>
-                <li><a href="index.html#media-preview" class="active">Media</a></li>
-                <li><a href="index.html#small-groups">Groups</a></li>
+                <li><a href="index.html#media-preview">Media</a></li>
+                <li><a href="index.html#small-groups" class="active">Groups</a></li>
                 <li><a href="visit.html">Visit Us</a></li>
                 <li><a href="giving.html" class="btn-primary">Give</a></li>
             </ul>
@@ -46,21 +68,148 @@
     </div>
 </header>
 
-<section class="media-hero">
-    <h1>Sermons</h1>
-    <p>Listen to inspiring messages and teachings from our ministry.</p>
-</section>
-<section>
-    <div class="media-content">
-        <h2>Recent Sermons</h2>
-        <ul>
-            <li>September 7, 2025: <a href="#">"Walking in Purpose"</a></li>
-            <li>August 31, 2025: <a href="#">"Faith Over Fear"</a></li>
-            <li>August 24, 2025: <a href="#">"The Power of Prayer"</a></li>
-        </ul>
+<section class="groups-hero">
+    <div class="container">
+        <h1>Small Groups</h1>
+        <p>Grow in faith, build authentic relationships, and discover your purpose in community.</p>
     </div>
-    <div class="cta-bar">
-        <a href="index.html" class="btn-secondary"><i class="fas fa-arrow-left"></i> Back to Home</a>
+</section>
+
+<section class="groups-directory">
+    <div class="container">
+
+        <div class="groups-grid" id="groupsGrid">
+            <div class="group-card" data-day="Tuesday" data-type="study">
+                <div class="group-image">
+                    <img src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=800&q=80" alt="Young Adults Group">
+                </div>
+                <div class="group-content">
+                    <span class="group-meta">Women's Group</span>
+                    <h3>Women's Prayer Group (Daughters of Fire)</h3>
+                    <p>Connect, Pray and Fellowship.</p>
+                    <p class="group-times"><i class="far fa-calendar-alt"></i> Wednesdays 7:30 PM</p>
+                    <div class="tag-row">
+                        <span>Study</span><span>Women</span><span>Fellowship</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="group-card" data-day="Saturday" data-type="fellowship">
+                <div class="group-image">
+                    <img src="https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?auto=format&fit=crop&w=800&q=80" alt="Married Couples Group">
+                </div>
+                <div class="group-content">
+                    <span class="group-meta">Youth Group</span>
+                    <h3>Youth Ministry</h3>
+                    <p>Our youth group is a place where our young people can build community, grow in their faith, and discover their identity in Christ</p>
+                    <p class="group-times"><i class="far fa-calendar-alt"></i> Varies (TBA) </p>
+                    <div class="tag-row">
+                        <span>Youth & Young Adults</span><span>Fellowship</span><span>Study</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="group-card" data-day="Thursday" data-type="study">
+                <div class="group-image">
+                    <img src="https://images.unsplash.com/photo-1536337005238-94b997371b40?auto=format&fit=crop&w=800&q=80" alt="Men's Fellowship">
+                </div>
+                <div class="group-content">
+                    <span class="group-meta">Men</span>
+                    <h3>Men's Fellowship</h3>
+                    <p>Our men's fellowship is a place where we challenge each other to build real community, grow in our faith, and become the servant-leaders God has called us to be</p>
+                    <p class="group-times"><i class="far fa-calendar-alt"></i> Varies (TBA) </p>
+                    <div class="tag-row">
+                        <span>Men</span><span>Study</span><span>Prayer</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="group-card" data-day="Wednesday" data-type="prayer">
+                <div class="group-image">
+                    <img src="images/praisedance.png" alt="Praise Dance Team">
+                </div>
+                <div class="group-content">
+                    <span class="group-meta">Women</span>
+                    <h3>Praise Dance Team</h3>
+                    <p>Our praise dance team is a ministry that uses the art of dance to visually express the Word of God, leading others into worship and glorifying His name.</p>
+                    <p class="group-times"><i class="far fa-calendar-alt"></i> Varies </p>
+                    <div class="tag-row"><span>Fellowship</span><span>Worship</span></div>
+                </div>
+            </div>
+
+            <div class="group-card placeholder" data-day="Sunday" data-type="youth">
+                <div class="group-image">
+                    <img src="https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=800&q=80" alt="Youth Group Placeholder">
+                </div>
+                <div class="group-content">
+                    <span class="group-meta">Coming Soon</span>
+                    <h3>Coming Soon</h3>
+                    <p>Coming Soon</p>
+                    <p class="group-times"><i class="far fa-calendar-alt"></i> Coming Soon </p>
+                    <div class="tag-row"><span>Prayer</span><span>Intercession</span></div>
+                </div>
+            </div>
+
+            <div class="group-card placeholder" data-day="Monday" data-type="study">
+                <div class="group-image">
+                    <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=800&q=80" alt="Men's Group Placeholder">
+                </div>
+                <div class="group-content">
+                    <span class="group-meta">Coming Soon</span>
+                    <h3>Coming Soon</h3>
+                    <p>Coming Soon</p>
+                    <p class="group-times"><i class="far fa-calendar-alt"></i> Coming Soon </p>
+                    <div class="tag-row"><span>Prayer</span><span>Intercession</span></div>
+                </div>
+            </div>
+
+            <div class="group-card placeholder" data-day="Friday" data-type="outreach">
+                <div class="group-image">
+                    <img src="https://images.unsplash.com/photo-1509099836639-18ba1795216d?auto=format&fit=crop&w=800&q=80" alt="Outreach Group Placeholder">
+                </div>
+                <div class="group-content">
+                    <span class="group-meta">Coming Soon</span>
+                    <h3>Coming Soon</h3>
+                    <p>Coming Soon</p>
+                    <p class="group-times"><i class="far fa-calendar-alt"></i> Coming Soon </p>
+                    <div class="tag-row"><span>Prayer</span><span>Intercession</span></div>
+                </div>
+            </div>
+
+            <div class="group-card placeholder" data-day="Thursday" data-type="fellowship">
+                <div class="group-image">
+                    <img src="https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?auto=format&fit=crop&w=800&q=80" alt="College Group Placeholder">
+                </div>
+                <div class="group-content">
+                    <span class="group-meta">Coming Soon</span>
+                    <h3>Coming Soon</h3>
+                    <p>Coming Soon</p>
+                    <p class="group-times"><i class="far fa-calendar-alt"></i> Coming Soon </p>
+                    <div class="tag-row"><span>Prayer</span><span>Intercession</span></div>
+                </div>
+            </div>
+
+            <div class="group-card placeholder" data-day="Tuesday" data-type="study">
+                <div class="group-image">
+                    <img src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?auto=format&fit=crop&w=800&q=80" alt="Foundations Group Placeholder">
+                </div>
+                <div class="group-content">
+                    <span class="group-meta">Coming Soon</span>
+                    <h3>Coming Soon</h3>
+                    <p>Coming Soon</p>
+                    <p class="group-times"><i class="far fa-calendar-alt"></i> Coming Soon </p>
+                    <div class="tag-row"><span>Prayer</span><span>Intercession</span></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="info-note">
+            Interested in launching a new group? <a href="mailto:smallgroups@yourchurch.org"><strong>Email our small group leader</strong></a> to begin the simple onboarding process.
+        </div>
+
+        <div class="cta-bar">
+            <a href="index.html" class="btn-secondary"><i class="fas fa-arrow-left"></i> Back to Home</a>
+        </div>
     </div>
 </section>
 
@@ -112,5 +261,6 @@
         </div>
     </div>
 </footer>
+<script src="js/script.js"></script>
 </body>
 </html>
