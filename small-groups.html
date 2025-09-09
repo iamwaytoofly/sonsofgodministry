@@ -18,7 +18,12 @@
             padding:100px 0 80px;
             text-align:center;
         }
-       
+        .groups-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 2.5rem 0;
+        }
         .group-card:hover { transform:translateY(-4px); box-shadow:0 8px 22px rgba(0,0,0,.12); }
         .group-image img { width:100%;height:160px;object-fit:cover;display:block; }
         .group-content { padding:1rem 1.1rem 1.25rem; display:flex; flex-direction:column; gap:.5rem; }
@@ -34,9 +39,8 @@
         .info-note { background:#f1f5f9; padding:1rem 1.25rem; border-left:4px solid #6366f1; border-radius:8px; font-size:.85rem; margin:2.5rem 0; }
         .cta-bar { text-align:center; margin:3rem 0 1rem; }
         .cta-bar a { margin:.4rem .5rem; }
-        .search-empty { display:none; text-align:center; padding:2rem 1rem; font-size:1rem; color:#555; }
         @media (max-width:640px){
-            .groups-filter-bar { flex-direction:column; align-items:stretch; }
+            .groups-grid { grid-template-columns: 1fr; }
         }
     </style>
 </head>
@@ -73,43 +77,8 @@
 
 <section class="groups-directory">
     <div class="container">
-        <section class="groups-directory">
-  <div class="container">
-
-    <!-- Paste the grid block here! -->
-    <div class="groups-grid" id="groupsGrid">
-      <!-- ...all your group-card HTML from my previous answer... -->
-    </div>
-
-    <div class="info-note">
-      Interested in launching a new group? Contact our leadership team to begin the simple onboarding process.
-    </div>
-    <div class="cta-bar">
-      <!-- ... -->
-    </div>
-  </div>
-</section>
-        <!-- <div class="groups-filter-bar">
-            <input type="text" id="groupSearch" placeholder="Search groups (topic, day, leader)...">
-            <select id="dayFilter">
-                <option value="">All Days</option>
-                <option>Sunday</option><option>Monday</option><option>Tuesday</option>
-                <option>Wednesday</option><option>Thursday</option><option>Friday</option><option>Saturday</option>
-            </select>
-            <select id="typeFilter">
-                <option value="">All Types</option>
-                <option value="study">Bible Study</option>
-                <option value="fellowship">Fellowship</option>
-                <option value="prayer">Prayer</option>
-                <option value="outreach">Outreach</option>
-                <option value="youth">Youth</option>
-            </select>
-        </div>
-
-        <div id="noResults" class="search-empty">No groups match your search yet. Try different filters.</div>
 
         <div class="groups-grid" id="groupsGrid">
-            <!-- Existing and placeholder cards (unchanged content) -->
             <div class="group-card" data-day="Tuesday" data-type="study">
                 <div class="group-image">
                     <img src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=800&q=80" alt="Young Adults Group">
@@ -118,8 +87,8 @@
                     <span class="group-meta">Women's Group</span>
                     <h3>Women's Prayer Group (Daughters of Fire)</h3>
                     <p>Connect, Pray and Fellowship.</p>
-                    <p><i class="far fa-calendar-alt"></i> Wednesdays 7:30 PM</p>
-                <div class="tag-row">
+                    <p class="group-times"><i class="far fa-calendar-alt"></i> Wednesdays 7:30 PM</p>
+                    <div class="tag-row">
                         <span>Study</span><span>Young Adults</span><span>Fellowship</span>
                     </div>
                 </div>
@@ -186,7 +155,7 @@
                 <div class="group-image">
                     <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=800&q=80" alt="Men's Group Placeholder">
                 </div>
-                <<div class="group-content">
+                <div class="group-content">
                     <span class="group-meta">Coming Soon</span>
                     <h3>Coming Soon</h3>
                     <p>Coming Soon</p>
@@ -199,7 +168,7 @@
                 <div class="group-image">
                     <img src="https://images.unsplash.com/photo-1509099836639-18ba1795216d?auto=format&fit=crop&w=800&q=80" alt="Outreach Group Placeholder">
                 </div>
-                <<div class="group-content">
+                <div class="group-content">
                     <span class="group-meta">Coming Soon</span>
                     <h3>Coming Soon</h3>
                     <p>Coming Soon</p>
@@ -212,7 +181,7 @@
                 <div class="group-image">
                     <img src="https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?auto=format&fit=crop&w=800&q=80" alt="College Group Placeholder">
                 </div>
-                <<div class="group-content">
+                <div class="group-content">
                     <span class="group-meta">Coming Soon</span>
                     <h3>Coming Soon</h3>
                     <p>Coming Soon</p>
@@ -225,7 +194,7 @@
                 <div class="group-image">
                     <img src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?auto=format&fit=crop&w=800&q=80" alt="Foundations Group Placeholder">
                 </div>
-                <<div class="group-content">
+                <div class="group-content">
                     <span class="group-meta">Coming Soon</span>
                     <h3>Coming Soon</h3>
                     <p>Coming Soon</p>
@@ -295,32 +264,5 @@
     </div>
 </footer>
 <script src="js/script.js"></script>
-<script>
-const searchInput = document.getElementById('groupSearch');
-const dayFilter = document.getElementById('dayFilter');
-const typeFilter = document.getElementById('typeFilter');
-const grid = document.getElementById('groupsGrid');
-const noResults = document.getElementById('noResults');
-
-function filterGroups() {
-    const term = (searchInput.value || '').toLowerCase();
-    const day = dayFilter.value;
-    const type = typeFilter.value;
-    let visible = 0;
-    [...grid.querySelectorAll('.group-card')].forEach(card => {
-        const text = card.innerText.toLowerCase();
-        const cardDay = card.getAttribute('data-day');
-        const cardType = card.getAttribute('data-type');
-        const matchTerm = !term || text.includes(term);
-        const matchDay = !day || day === cardDay;
-        const matchType = !type || type === cardType;
-        const show = matchTerm && matchDay && matchType;
-        card.style.display = show ? '' : 'none';
-        if (show) visible++;
-    });
-    noResults.style.display = visible ? 'none' : 'block';
-}
-[searchInput, dayFilter, typeFilter].forEach(el => el.addEventListener('input', filterGroups));
-</script>
 </body>
 </html>
