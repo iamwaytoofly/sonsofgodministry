@@ -208,10 +208,10 @@
         Interested in launching a new group? <strong> Email our small group leader</strong></a> to begin the simple onboarding process.
         </div>
 
-        <div class="cta-bar">
-            <a href="index.html#small-groups" class="btn-secondary"><i class="fas fa-arrow-left"></i> Back to Home</a>
-            <a href="mailto:smallgroups@yourchurch.org" class="btn-primary">Start a Group</a>
-        </div>
+           <div class="cta-bar">
+                <a href="index.html#small-groups" class="btn-secondary"><i class="fas fa-arrow-left"></i> Back to Home</a>
+                <button id="openGroupModal" class="btn-primary">Start a Group</button>
+           </div>
     </div>
 </section>
 
@@ -264,5 +264,53 @@
     </div>
 </footer>
 <script src="js/script.js"></script>
+<div id="groupModal" class="modal" aria-modal="true" role="dialog" hidden>
+    <div class="modal-backdrop" data-close="true"></div>
+    <div class="modal-content" role="document">
+        <button class="modal-close" type="button" aria-label="Close" data-close="true">&times;</button>
+        <h2 style="margin-top:0;">Start a Small Group</h2>
+        <form action="https://formspree.io/f/mayqgkzb" method="POST" class="start-group-form">
+            <input type="hidden" name="_replyto" value="iamwaytoofly@yahoo.com">
+            <div class="form-group">
+                <label for="sg_name">Your Name</label>
+                <input type="text" id="sg_name" name="name" required>
+            </div>
+            <div class="form-group">
+                <label for="sg_email">Your Email</label>
+                <input type="email" id="sg_email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="sg_group">Group Name & Description</label>
+                <textarea id="sg_group" name="group_description" rows="3" maxlength="300" placeholder="What is your group about?" required></textarea>
+            </div>
+            <button type="submit" class="btn-primary">Submit</button>
+        </form>
+    </div>
+</div>
+...
+<!-- Your modal HTML goes here -->
+
+<!-- Paste the JS snippet here -->
+<script>
+document.addEventListener('DOMContentLoaded',()=>{
+    const modal = document.getElementById('groupModal');
+    const openBtn = document.getElementById('openGroupModal');
+    const closeSelectors = '[data-close="true"]';
+
+    function openModal() { modal.hidden = false; document.body.style.overflow = 'hidden'; }
+    function closeModal() { modal.hidden = true; document.body.style.overflow = ''; }
+
+    openBtn.addEventListener('click', openModal);
+    modal.addEventListener('click', e => {
+        if (e.target.matches(closeSelectors) || e.target.closest(closeSelectors)) closeModal();
+    });
+    document.addEventListener('keydown', e => {
+        if (!modal.hidden && e.key === 'Escape') closeModal();
+    });
+});
+</script>
+
+</body>
+</html>
 </body>
 </html>
