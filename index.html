@@ -17,13 +17,11 @@
     <meta property="twitter:title" content="The Sons of God Ministry, Inc. | Pittsburgh, PA">
     <meta property="twitter:description" content="A place to belong, believe, and become. Join our vibrant faith community in Pittsburgh.">
     <meta property="twitter:image" content="images/logo/logo.png">
-
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet"
           href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Inter:wght@300;400;600&display=swap"
           rel="stylesheet">
-
     <style>
         html { scroll-behavior: smooth; }
         #about, #services, #media-preview, #small-groups, #events, #verse-of-day {
@@ -120,10 +118,252 @@
     </div>
 </section>
 
-<!-- Everything below this point is unchanged and you can keep your existing content for service times and below -->
+<section id="services" class="services-section">
+    <div class="container">
+        <h2>Service Times</h2>
+        <div class="services-grid">
+            <div class="service-card">
+                <h3>Sunday Services</h3>
+                <p>10:30 AM & 12:00 PM</p>
+                <p>In-person & Online</p>
+                <a href="services.html#sunday" class="btn-tertiary">Learn More</a>
+            </div>
+            <div class="service-card">
+                <h3>Tuesday Night</h3>
+                <p>Tuesdays at 7:30 PM</p>
+                <p>Bible Study & Prayer</p>
+                <a href="services.html#wednesday" class="btn-tertiary">Learn More</a>
+            </div>
+            <div class="service-card">
+                <h3>Evangelistic Service</h3>
+                <p>Fridays at 7:30 PM</p>
+                <p>Various Ministers & Topics</p>
+                <a href="services.html#youth" class="btn-tertiary">Learn More</a>
+            </div>
+        </div>
+    </div>
+</section>
 
-<!-- Service Times, Small Groups, Media Preview, Events, Footer, etc. -->
-<!-- ... -->
+<section id="small-groups" class="small-groups-section">
+    <div class="container">
+        <h2>Connect in Small Groups</h2>
+        <p class="section-intro">Find your community and grow together in faith</p>
+        <div class="groups-grid">
+            <div class="group-card">
+                <div class="group-image">
+                    <img src="images/daughtersoffire.png" alt="Daughters of Fire">
+                </div>
+                <div class="group-content">
+                    <h3>Women's Prayer Group</h3>
+                    <h3>(Daughters of Fire)</h3>
+                    <p>A place for women to find supportive community and grow in their faith through focused prayer and fellowship.</p>
+                    <p><i class="far fa-calendar-alt"></i> Wednesdays 7:30 PM</p>
+                </div>
+            </div>
+            <div class="group-card">
+                <div class="group-image">
+                    <img src="images/youthgroup.png" alt="Youth Group">
+                </div>
+                <div class="group-content">
+                    <h3>Youth Ministry</h3>
+                    <p>Our youth group is a place where our young people can build community, grow in their faith, and discover their identity in Christ </p>
+                    <p><i class="far fa-calendar-alt"></i> Varies (TBA) </p>
+                </div>
+            </div>
+            <div class="group-card">
+                <div class="group-image">
+                    <img src="images/praisedance.png" alt="Mens Fellowship">
+                </div>
+                <div class="group-content">
+                    <h3>Praise Dance</h3>
+                    <p>A vibrant group of expressive worshippers who lead the congregation in spirit-filled music, drawing people into a deeper connection with God.</p>
+                    <p><i class="far fa-calendar-alt"></i> Varies (TBA) </p>
+                </div>
+            </div>
+        </div>
+        <div class="groups-cta">
+            <a href="small-groups.html" class="btn-primary">View All Groups</a>
+        </div>
+    </div>
+</section>
+
+<section id="media-preview" class="media-preview-section">
+    <div class="container">
+        <h2>Latest Media</h2>
+        <div class="media-tabs" role="tablist">
+            <button class="media-tab active" data-tab="sermons" role="tab" aria-selected="true" aria-controls="sermons-content">Sermons</button>
+            <button class="media-tab" data-tab="music" role="tab" aria-selected="false" aria-controls="music-content">Praise Dance</button>
+            <button class="media-tab" data-tab="podcasts" role="tab" aria-selected="false" aria-controls="podcasts-content">Podcasts and Blogs</button>
+        </div>
+        <!-- SERMONS -->
+        <div class="media-content active" id="sermons-content" role="tabpanel">
+            <div class="media-grid">
+                <div class="media-item">
+                    <div class="media-thumbnail">
+                        <img src="images/ComingSoon.png" alt="Sermon: Lifted by Grace">
+                        <div class="play-button"><i class="fas fa-play"></i></div>
+                    </div>
+                    <div class="media-details">
+                        <h3>TBA</h3>
+                        <p>Jan 19, 2025 ·TBA</p>
+                    </div>
+                </div>
+                <div class="media-item">
+                    <div class="media-thumbnail">
+                        <img src="images/ComingSoon.png" alt="Sermon: Unshakable Hope">
+                        <div class="play-button"><i class="fas fa-play"></i></div>
+                    </div>
+                    <div class="media-details">
+                        <h3>TBA</h3>
+                        <p>Jan 12, 2025 · TBAr</p>
+                    </div>
+                </div>
+                <div class="media-item">
+                    <div class="media-thumbnail">
+                        <img src="images/ComingSoon.png" alt="Sermon: The Power of Prayer">
+                        <div class="play-button"><i class="fas fa-play"></i></div>
+                    </div>
+                    <div class="media-details">
+                        <h3>TBA</h3>
+                        <p>Jan 5, 2025 · TBA</p>
+                    </div>
+                </div>
+            </div>
+            <div class="media-cta">
+                <a href="sermons.html" class="btn-secondary">View All Sermons</a>
+            </div>
+        </div>
+        <!-- PRAISE DANCE -->
+        <div class="media-content" id="music-content" role="tabpanel" hidden>
+            <div class="media-grid">
+                <div class="media-item">
+                    <div class="media-thumbnail">
+                        <img src="images/ComingSoon.png" alt="Praise Dance: Glory Rising">
+                        <div class="play-button"><i class="fas fa-music"></i></div>
+                    </div>
+                    <div class="media-details">
+                        <h3>TBA</h3>
+                        <p>TBA</p>
+                    </div>
+                </div>
+                <div class="media-item">
+                    <div class="media-thumbnail">
+                        <img src="images/ComingSoon.png" alt="Praise Dance: Morning Praise">
+                        <div class="play-button"><i class="fas fa-music"></i></div>
+                    </div>
+                    <div class="media-details">
+                        <h3>TBA</h3>
+                        <p>TBA</p>
+                    </div>
+                </div>
+                <div class="media-item">
+                    <div class="media-thumbnail">
+                        <img src="images/ComingSoon.png" alt="Praise Dance: Ever Faithful">
+                        <div class="play-button"><i class="fas fa-music"></i></div>
+                    </div>
+                    <div class="media-details">
+                        <h3>TBA</h3>
+                        <p>TBA</p>
+                    </div>
+                </div>
+            </div>
+            <div class="media-cta">
+                <a href="praise_dance.html" class="btn-secondary">View All Praise Dance</a>
+            </div>
+        </div>
+        <!-- PODCASTS & BLOGS -->
+        <div class="media-content" id="podcasts-content" role="tabpanel" hidden>
+            <div class="media-grid">
+                <div class="media-item">
+                    <div class="media-thumbnail">
+                        <img src="images/ComingSoon.png" alt="Podcast: Renewed Minds Ep 14">
+                        <div class="play-button"><i class="fas fa-podcast"></i></div>
+                    </div>
+                    <div class="media-details">
+                        <h3>TBA</h3>
+                        <p>TBA</p>
+                    </div>
+                </div>
+                <div class="media-item">
+                    <div class="media-thumbnail">
+                        <img src="images/ComingSoon.png" alt="Blog: Fasting & Focus">
+                        <div class="play-button"><i class="fas fa-book-open"></i></div>
+                    </div>
+                    <div class="media-details">
+                        <h3>TBA</h3>
+                        <p>TBA</p></p>
+                    </div>
+                </div>
+                <div class="media-item">
+                    <div class="media-thumbnail">
+                        <img src="images/ComingSoon.png" alt="Podcast: Purpose in Waiting Ep 13">
+                        <div class="play-button"><i class="fas fa-podcast"></i></div>
+                    </div>
+                    <div class="media-details">
+                        <h3>TBA</h3>
+                        <p>TBA</p>
+                    </div>
+                </div>
+            </div>
+            <div class="media-cta">
+                <a href="podcasts.html" class="btn-secondary">View All Podcasts & Blogs</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<footer>
+    <div class="container">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>The Sons of God Ministry, Inc.</h3>
+                <p>200 Tabor St.<br>Pittsburgh, PA 15204</p>
+                <p>Phone: (555) 123-4567</p>
+                <p>Email: info@sonsofgodministry.org</p>
+            </div>
+            <div class="footer-section">
+                <h3>Service Times</h3>
+                <p>Sunday: 9:00 AM & 11:00 AM</p>
+                <p>Wednesday: 7:00 PM</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#media-preview">Media</a></li>
+                    <li><a href="visit.html">Visit Us</a></li>
+                    <li><a href="giving.html">Give</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Connect With Us</h3>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                    <a href="#"><i class="fab fa-spotify"></i></a>
+                    <a href="#"><i class="fab fa-tiktok"></i></a>
+                </div>
+                <div class="app-links">
+                    <a href="#"><img src="https://upload.wikimedia.org/wikipedia/commons/3/3c/Download_on_the_App_Store_Badge.svg" alt="App Store"></a>
+                    <a href="#"><img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg" alt="Google Play"></a>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h3>Stay Updated</h3>
+                <p>Subscribe to our newsletter for weekly updates and devotionals.</p>
+                <form action="https://formspree.io/f/xdklnnbg" method="POST">
+                    <input type="email" name="email" placeholder="Your Email Address" required>
+                    <button type="submit">Subscribe</button>
+                </form>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 The Sons of God Ministry, Inc. All Rights Reserved.</p>
+        </div>
+    </div>
+</footer>
 <script src="js/script.js"></script>
 <script type="application/ld+json">
 {
