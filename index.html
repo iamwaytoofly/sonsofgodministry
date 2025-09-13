@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <title>Countdown to Launch | Sons of God Ministry</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <!-- Fonts for a clean, modern feel -->
+  <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
   <style>
     :root {
@@ -27,7 +27,7 @@
       flex-direction: column;
       overflow-x: hidden;
     }
-    /* Empty top menu bar (kept as requested earlier) */
+    /* Empty menu bar kept as requested */
     .menu-bar {
       width: 100vw;
       background: var(--brand);
@@ -46,6 +46,7 @@
       justify-content: flex-start;
       align-items: center;
     }
+
     /* Center the countdown area in the viewport */
     .center-content {
       flex: 1;
@@ -54,45 +55,41 @@
       justify-content: center;
       padding: 2vh 0;
     }
-    /* Stack container with the logo behind the countdown */
+
+    /* Stack with logo as a background: show entire logo (no crop) */
     .stack {
       position: relative;
-      width: 100vw;        /* full browser width */
+      width: 100vw;          /* full browser width */
       max-width: 100vw;
       margin: 0 auto;
-      /* Put the logo behind the countdown, full width */
-      background-image: url('logo.png');  /* replace with your logo file */
+
+      /* Put the logo behind the countdown */
+      background-image: url('logo.png'); /* replace with your logo file path */
       background-repeat: no-repeat;
-      background-position: center;
-      background-size: 100% auto;         /* logo as wide as the window */
+      background-position: center center;
+      background-size: contain;          /* ensures the whole logo is visible */
     }
-    /* Optional: soft edge + focus for the countdown area */
-    .stack::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: rgba(255,255,255,0.05);
-      pointer-events: none;
-    }
-    /* The TickCounter anchor defines its own responsive height via padding-bottom */
+
+    /* TickCounter responsive area */
     .tickcounter {
       display: block;
       left: 0;
       width: 100%;
       height: 0;
       position: relative;
-      padding-bottom: 25%; /* aspect ratio of the countdown area */
+      padding-bottom: 25%;               /* aspect ratio of the countdown area */
       margin: 0 auto;
-      z-index: 1;          /* ensure it sits above the background logo */
+      z-index: 1;                        /* sits above the background logo */
       box-shadow: 0 8px 32px rgba(60, 60, 150, 0.15);
       border-radius: 12px;
+      background: rgba(255,255,255,0.02); /* subtle backdrop so logo shows cleanly */
     }
 
-    /* Tweak for small screens */
+    /* Smaller screens: give the countdown a bit more height */
     @media (max-width: 700px) {
       .menu-bar { min-height: 44px; }
       .tickcounter {
-        padding-bottom: 40%; /* give a bit more height on small devices */
+        padding-bottom: 40%;
         border-radius: 10px;
       }
     }
@@ -107,7 +104,7 @@
 
   <div class="center-content">
     <div class="stack">
-      <!-- TickCounter loader (replaces the previous iframe) -->
+      <!-- TickCounter loader -->
       <script>
         (function(d, s, id) {
           var js, pjs = d.getElementsByTagName(s)[0];
