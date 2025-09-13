@@ -4,27 +4,33 @@
   <meta charset="UTF-8">
   <title>Countdown to Launch | Sons of God Ministry</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Fonts for a clean, modern feel -->
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
   <style>
+    :root {
+      --brand: #356dd0;
+      --bg1: #e6e9f0;
+      --bg2: #eef2f3;
+    }
+    * { box-sizing: border-box; }
     html, body {
       height: 100%;
       margin: 0;
       padding: 0;
-      box-sizing: border-box;
     }
     body {
-      background: linear-gradient(135deg, #e6e9f0 0%, #eef2f3 100%);
       font-family: 'Roboto', Arial, sans-serif;
-      width: 100vw;
-      height: 100vh;
-      overflow: hidden;
+      color: #222;
+      background: linear-gradient(135deg, var(--bg1) 0%, var(--bg2) 100%);
+      min-height: 100vh;
       display: flex;
       flex-direction: column;
-      min-height: 100vh;
+      overflow-x: hidden;
     }
+    /* Empty top menu bar (kept as requested earlier) */
     .menu-bar {
       width: 100vw;
-      background: #356dd0;
+      background: var(--brand);
       min-height: 56px;
       display: flex;
       align-items: center;
@@ -40,63 +46,54 @@
       justify-content: flex-start;
       align-items: center;
     }
+    /* Center the countdown area in the viewport */
     .center-content {
       flex: 1;
       display: flex;
-      flex-direction: column;
       align-items: center;
       justify-content: center;
+      padding: 2vh 0;
     }
-    .logo-container {
-      width: 100vw;
+    /* Stack container with the logo behind the countdown */
+    .stack {
+      position: relative;
+      width: 100vw;        /* full browser width */
       max-width: 100vw;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      margin-bottom: 2.5vh;
+      margin: 0 auto;
+      /* Put the logo behind the countdown, full width */
+      background-image: url('logo.png');  /* replace with your logo file */
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: 100% auto;         /* logo as wide as the window */
     }
-    .logo-container img {
-      width: 100vw;
-      max-width: 100vw;
-      height: auto;
-      max-height: 22vh;
-      object-fit: contain;
+    /* Optional: soft edge + focus for the countdown area */
+    .stack::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(255,255,255,0.05);
+      pointer-events: none;
+    }
+    /* The TickCounter anchor defines its own responsive height via padding-bottom */
+    .tickcounter {
       display: block;
-      background: #fff;
-    }
-    .iframe-container {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      width: 100vw;
-      height: 40vh;
-      min-height: 220px;
-    }
-    .responsive-iframe {
-      width: 60vw;
-      max-width: 575px;
-      height: 30vw;
-      max-height: 296px;
-      min-width: 220px;
-      min-height: 130px;
-      border: none;
+      left: 0;
+      width: 100%;
+      height: 0;
+      position: relative;
+      padding-bottom: 25%; /* aspect ratio of the countdown area */
+      margin: 0 auto;
+      z-index: 1;          /* ensure it sits above the background logo */
       box-shadow: 0 8px 32px rgba(60, 60, 150, 0.15);
       border-radius: 12px;
-      background: #fff;
     }
+
+    /* Tweak for small screens */
     @media (max-width: 700px) {
-      .logo-container img {
-        max-height: 16vh;
-      }
-      .iframe-container {
-        height: 28vh;
-        min-height: 120px;
-      }
-      .responsive-iframe {
-        width: 90vw;
-        height: 44vw;
-        max-width: 575px;
-        max-height: 296px;
+      .menu-bar { min-height: 44px; }
+      .tickcounter {
+        padding-bottom: 40%; /* give a bit more height on small devices */
+        border-radius: 10px;
       }
     }
   </style>
@@ -107,16 +104,28 @@
       <!-- Menu items will appear here after launch -->
     </nav>
   </div>
+
   <div class="center-content">
-    <div class="logo-container">
-      <img src="logo.png" alt="Sons of God Ministry Logo">
-    </div>
-    <div class="iframe-container">
-      <iframe class="responsive-iframe"
-        src="https://w2.countingdownto.com/6563810"
-        frameborder="0"
-        allowfullscreen
-        title="Countdown Timer"></iframe>
+    <div class="stack">
+      <!-- TickCounter loader (replaces the previous iframe) -->
+      <script>
+        (function(d, s, id) {
+          var js, pjs = d.getElementsByTagName(s)[0];
+          if (d.getElementById(id)) return;
+          js = d.createElement(s); js.id = id;
+          js.src = "//www.tickcounter.com/static/js/loader.js";
+          pjs.parentNode.insertBefore(js, pjs);
+        }(document, "script", "tickcounter-sdk"));
+      </script>
+      <a
+        data-type="countdown"
+        data-id="8126898"
+        class="tickcounter"
+        title="Countdown Until Sons of God Ministry Website Goes LIVE!!!"
+        href="//www.tickcounter.com/"
+      >
+        Countdown Until Sons of God Ministry Website Goes LIVE!!!
+      </a>
     </div>
   </div>
 </body>
