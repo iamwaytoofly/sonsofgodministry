@@ -67,10 +67,20 @@
       gap: 2.5vh;
     }
 
-    /* Shrunk logo: 75% of browser width */
+    /* Logo: fixed to 2in x 2in, image scales inside without distortion */
+    .logo-top {
+      width: 2in;
+      height: 2in;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
     .logo-top img {
-      width: 75vw;   /* was 100vw */
+      max-width: 100%;
+      max-height: 100%;
+      width: auto;
       height: auto;
+      object-fit: contain; /* ensures entire logo is visible */
       display: block;
     }
 
@@ -108,7 +118,7 @@
 
   <div class="center-content">
     <div class="stack">
-      <!-- Logo above the countdown -->
+      <!-- Logo above the countdown (2in x 2in) -->
       <div class="logo-top">
         <img src="logo.png" alt="Sons of God Ministry Logo">
       </div>
