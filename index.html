@@ -47,7 +47,7 @@
       align-items: center;
     }
 
-    /* Center the countdown area in the viewport */
+    /* Center the content (logo + countdown) in the viewport */
     .center-content {
       flex: 1;
       display: flex;
@@ -56,18 +56,22 @@
       padding: 2vh 0;
     }
 
-    /* Stack with logo as a background: show entire logo (no crop) */
+    /* Stack container for logo above countdown */
     .stack {
-      position: relative;
-      width: 100vw;          /* full browser width */
+      width: 100vw;
       max-width: 100vw;
       margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 2.5vh;
+    }
 
-      /* Put the logo behind the countdown */
-      background-image: url('logo.png'); /* replace with your logo file path */
-      background-repeat: no-repeat;
-      background-position: center center;
-      background-size: contain;          /* ensures the whole logo is visible */
+    /* Full-width responsive logo above the countdown */
+    .logo-top img {
+      width: 100vw;     /* as wide as the browser window */
+      height: auto;     /* keep aspect ratio */
+      display: block;
     }
 
     /* TickCounter responsive area */
@@ -79,10 +83,10 @@
       position: relative;
       padding-bottom: 25%;               /* aspect ratio of the countdown area */
       margin: 0 auto;
-      z-index: 1;                        /* sits above the background logo */
+      z-index: 1;
       box-shadow: 0 8px 32px rgba(60, 60, 150, 0.15);
       border-radius: 12px;
-      background: rgba(255,255,255,0.02); /* subtle backdrop so logo shows cleanly */
+      background: rgba(255,255,255,0.02);
     }
 
     /* Smaller screens: give the countdown a bit more height */
@@ -104,7 +108,12 @@
 
   <div class="center-content">
     <div class="stack">
-      <!-- TickCounter loader -->
+      <!-- Logo above the countdown -->
+      <div class="logo-top">
+        <img src="logo.png" alt="Sons of God Ministry Logo">
+      </div>
+
+      <!-- TickCounter loader and countdown -->
       <script>
         (function(d, s, id) {
           var js, pjs = d.getElementsByTagName(s)[0];
