@@ -344,7 +344,9 @@ nav {
 }
 
 .hero {
-    margin-bottom: 2.5rem; /* Adjust the value as you like */
+    height: 80vh;
+    min-height: 500px;
+    margin-bottom: 2.5rem;
 }
 
 
