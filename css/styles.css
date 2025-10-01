@@ -445,7 +445,7 @@ nav {
     position: relative;
     height: auto; /* Remove fixed height if possible */
     min-height: 500px;
-    padding-bottom: 2.5rem; /* Adds space inside, background will show */
+    /*padding-bottom: 2.5rem; /* Adds space inside, background will show */
     overflow: hidden;
     color: var(--white-color);
     margin-top: var(--header-height);
