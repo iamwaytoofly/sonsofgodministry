@@ -343,12 +343,6 @@ nav {
     transition: var(--transition);
 }
 
-.hero {
-    height: auto; /* Remove fixed height if possible */
-    min-height: 500px;
-    margin-bottom: 2.5rem; /* Adds space inside, background will show */
-}
-
 
 .main-nav a:hover::after,
 .main-nav a.active::after {
@@ -435,7 +429,7 @@ nav {
 /* ============================================
    7. HERO SECTION
    ============================================ */
-.hero {
+/*.hero {
     position: relative;
     height: 100vh;
     min-height: 600px;
@@ -445,7 +439,27 @@ nav {
     display: flex;
     align-items: center;
     justify-content: center;
+}*/
+
+.hero {
+    position: relative;
+    height: auto; /* Remove fixed height if possible */
+    min-height: 500px;
+    padding-bottom: 2.5rem; /* Adds space inside, background will show */
+    overflow: hidden;
+    color: var(--white-color);
+    margin-top: var(--header-height);
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
+
+/*.hero {
+    height: auto; /* Remove fixed height if possible */
+   /* min-height: 500px;
+   padding-bottom: 2.5rem; /* Adds space inside, background will show */
+/*}*/
+
 
 .slideshow-container {
     position: absolute;
