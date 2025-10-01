@@ -343,6 +343,11 @@ nav {
     transition: var(--transition);
 }
 
+.hero {
+    margin-bottom: 2.5rem; /* Adjust the value as you like */
+}
+
+
 .main-nav a:hover::after,
 .main-nav a.active::after {
     width: 80%;
