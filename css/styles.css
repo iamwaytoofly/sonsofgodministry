@@ -344,9 +344,9 @@ nav {
 }
 
 .hero {
-    height: 80vh;
+    height: auto; /* Remove fixed height if possible */
     min-height: 500px;
-    margin-bottom: 2.5rem;
+    padding-bottom: 2.5rem; /* Adds space inside, background will show */
 }
 
 
