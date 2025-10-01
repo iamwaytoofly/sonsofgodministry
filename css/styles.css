@@ -431,10 +431,11 @@ nav {
 .hero {
     position: relative;
     height: 100vh;
-    min-height: 600px;
+    min-height: 700px;
     overflow: hidden;
     color: var(--white-color);
-    margin-top: var(--header-height);
+    margin-top: 0;
+    padding-top: var(--header-height);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -1414,7 +1415,8 @@ footer button[type="submit"]:hover {
     }
     
     .hero {
-        height: 85vh;
+        height: 100vh;
+        min-height: 650px;
     }
     
     .hero-logo img {
@@ -1479,19 +1481,26 @@ footer button[type="submit"]:hover {
     
     /* Hero Adjustments */
     .hero {
-        height: 80vh;
-        min-height: 500px;
+        height: 100vh;
+        min-height: 600px;
     }
     
     .hero-buttons {
-        flex-direction: column;
+        flex-direction: row;
         width: 100%;
-        max-width: 300px;
+        max-width: 100%;
+        gap: var(--spacing-md);
+        justify-content: center;
+        flex-wrap: wrap;
     }
     
     .hero-buttons .btn-primary,
     .hero-buttons .btn-secondary {
-        width: 100%;
+        flex: 1;
+        min-width: 140px;
+        max-width: 180px;
+        padding: var(--spacing-md) var(--spacing-lg);
+        font-size: var(--font-size-xs);
     }
     
     /* Live Indicator Mobile */
@@ -1578,8 +1587,8 @@ footer button[type="submit"]:hover {
     
     /* Hero */
     .hero {
-        height: 70vh;
-        min-height: 450px;
+        height: 100vh;
+        min-height: 500px;
     }
     
     .hero-logo img {
